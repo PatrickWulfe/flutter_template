@@ -9,8 +9,10 @@ class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      // BlocBuilder to create the cubit based on current Navi
       child: BlocBuilder<NaviBloc, NaviState>(
         builder: (context, state) {
+          // BlocProvider to provide state to everything downstream in the widget
           return BlocProvider(
             create: (context) => NavDrawerCubit(state.pageConfig.uiPage),
             child: NavDrawerList(),
