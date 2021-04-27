@@ -20,11 +20,5 @@ class CurrentPage extends NaviState {
 }
 
 class ErrorState extends NaviState {
-  ErrorState() : super(_errorConfig, false);
+  ErrorState() : super(ErrorConfig, false);
 }
-
-PageConfiguration _homeConfig = PageConfiguration('home', '/', Pages.home);
-PageConfiguration _secondConfig =
-    PageConfiguration('second', '/second', Pages.second);
-PageConfiguration _errorConfig =
-    PageConfiguration('error', '/error', Pages.error);

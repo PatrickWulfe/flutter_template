@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import './simple_bloc_observer.dart';
-
-import 'navi/navi.dart';
-import 'views/views.dart';
+import 'components/components.dart';
 
 void main(List<String> args) {
   Bloc.observer = SimpleBlocObserver();

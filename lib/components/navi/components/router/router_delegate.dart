@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../views/views.dart';
+import '../../../../views/views.dart';
 
 import '../../navi.dart';
 
@@ -38,8 +38,8 @@ class NaviRouterDelegate extends RouterDelegate
 
   // Helper functions
   List<Page> _buildPages(_) {
-    if (_naviState!.pageConfig.key == 'SECOND') {
-      return [MaterialPage(child: SecondPage())];
+    if (_naviState!.pageConfig.key == 'LOGIN') {
+      return [MaterialPage(child: LoginPage())];
     }
     return [MaterialPage(child: HomePage())];
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../navi/navi.dart';
+import '../../components/components.dart';
 import '../../utils/utils.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,11 +9,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: MainAppBar(),
+      drawer: NavDrawer(),
       body: Center(
         child: ElevatedButton(
           child: Text('Go to Second Page'),
-          onPressed: () => BlocProvider.of<NaviBloc>(context)
-              .add(NaviNavigate(SecondConfig)),
+          onPressed: () =>
+              BlocProvider.of<NaviBloc>(context).add(NaviNavigate(LoginConfig)),
         ),
       ),
     );
