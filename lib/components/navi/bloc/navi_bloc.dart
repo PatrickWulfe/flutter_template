@@ -3,10 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-
-import '../../../models/models.dart';
-import '../navi.dart';
-import '../../../utils/utils.dart';
+import '../../../core/core.dart';
 
 part 'navi_event.dart';
 part 'navi_state.dart';

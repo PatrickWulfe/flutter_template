@@ -1,16 +1,10 @@
 # flutter_template
 
-A new Flutter project.
+My first attempt at making a Flutter development template.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Fairly new to Flutter but my goals for the template are:
+- Feature driven folder structure for modularity and reusability
+- BLoC based state management
+- Slight adaptation of the Navigator 2.0 to use BLoC (disliked how close it was to BLoC without actually being BLoC like everything else)
+- Full array of basic features that will be common across most apps (Themes, Accounts, Settings, etc.)
+- More to come as I work on it

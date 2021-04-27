@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:flutter_template/utils/utils.dart';
+import '../../../core/core.dart';
 import '../../components.dart';
-import '../nav_drawer.dart';
 
 class NavDrawerList extends StatelessWidget {
   NavDrawerList({Key? key}) : super(key: key);

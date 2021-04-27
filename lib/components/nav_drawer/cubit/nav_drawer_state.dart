@@ -1,7 +1,7 @@
 part of 'nav_drawer_cubit.dart';
 
 class NavDrawerState extends Equatable {
-  Pages selectedPage;
+  final Pages selectedPage;
   NavDrawerState(this.selectedPage);
 
   @override

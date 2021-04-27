@@ -1,7 +1,7 @@
 part of 'navi_bloc.dart';
 
 @immutable
-abstract class NaviState extends Equatable with ChangeNotifier {
+abstract class NaviState extends Equatable {
   final PageConfiguration pageConfig;
   final bool popSuccess;
 

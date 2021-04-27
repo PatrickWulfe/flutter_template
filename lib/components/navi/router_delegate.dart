@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_template/utils/utils.dart';
-import '../../../../views/views.dart';
+import '../../core/core.dart';
+import '../../views/views.dart';
 
-import '../../navi.dart';
+import 'navi.dart';
 
 class NaviRouterDelegate extends RouterDelegate
     with ChangeNotifier, PopNavigatorRouterDelegateMixin {
