@@ -6,23 +6,18 @@ import '../../components.dart';
 import '../nav_drawer.dart';
 
 class NavDrawerList extends StatelessWidget {
-  const NavDrawerList({Key? key}) : super(key: key);
+  NavDrawerList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final cubit = NavDrawerCubit();
     List<_ListItem> _list = _buildList();
-    return BlocListener<NaviBloc, NaviState>(
-      listener: (context, state) {
-        cubit.updateSelected(state.pageConfig.uiPage);
+    NavDrawerCubit cubit = BlocProvider.of<NavDrawerCubit>(context);
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      itemCount: Pages.values.length,
+      itemBuilder: (context, index) {
+        return _buildItem(_list[index], cubit.state.selectedPage);
       },
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        itemCount: Pages.values.length,
-        itemBuilder: (context, index) {
-          return _buildItem(_list[index], cubit.state.selectedPage);
-        },
-      ),
     );
   }
 
@@ -70,12 +65,12 @@ class NavDrawerList extends StatelessWidget {
             title: Text(
               pageConfig.name,
               style: TextStyle(
-                  //color: selected ? Colors.black : Colors.blueGrey,
-                  ),
+                color: selected ? Colors.black : Colors.blueGrey,
+              ),
             ),
             leading: Icon(
               pageConfig.icon,
-              //color: selected ? Colors.black : Colors.blueGrey,
+              color: selected ? Colors.black : Colors.blueGrey,
             ),
             onTap: () => _handlePageClick(context, pageConfig),
           );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_template/utils/utils.dart';
 import '../../../../views/views.dart';
 
 import '../../navi.dart';
@@ -38,7 +39,7 @@ class NaviRouterDelegate extends RouterDelegate
 
   // Helper functions
   List<Page> _buildPages(_) {
-    if (_naviState!.pageConfig.key == 'LOGIN') {
+    if (_naviState!.pageConfig.uiPage == Pages.login) {
       return [MaterialPage(child: LoginPage())];
     }
     return [MaterialPage(child: HomePage())];

@@ -23,7 +23,7 @@ class NaviBloc extends Bloc<NaviEvent, NaviState> {
         yield CurrentPage((event as NaviNavigate).pageConfig, false);
         break;
       case NaviPop:
-        if ((event as NaviPop).pageConfig.key == 'HOME') {
+        if ((event as NaviPop).pageConfig.uiPage == Pages.home) {
           yield CurrentPage(HomeConfig, false);
         } else {
           yield CurrentPage(HomeConfig, true);
