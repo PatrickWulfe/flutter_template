@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'cubit/theme_cubit.dart';
 
 export 'cubit/theme_cubit.dart';
 
@@ -11,6 +10,15 @@ enum AppTheme {
   PurpleDark,
   PurpleLight,
 }
+
+const Map<AppTheme, String> AppThemeName = {
+  AppTheme.BlueDark: "Dark Blue",
+  AppTheme.BlueLight: "Light Blue",
+  AppTheme.GreenDark: "Dark Green",
+  AppTheme.GreenLight: "Light Green",
+  AppTheme.PurpleDark: "Dark Purple",
+  AppTheme.PurpleLight: "Light Purple",
+};
 
 final appThemeData = {
   AppTheme.BlueDark: ThemeData(

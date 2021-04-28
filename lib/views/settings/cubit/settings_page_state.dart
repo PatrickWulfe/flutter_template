@@ -1,8 +1,8 @@
-part of 'settings_page_bloc.dart';
+part of 'settings_page_cubit.dart';
 
 abstract class SettingsPageState extends Equatable {
-  const SettingsPageState();
-  
+  const SettingsPageState(, 
+
   @override
   List<Object> get props => [];
 }

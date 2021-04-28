@@ -17,7 +17,7 @@ class NavDrawer extends StatelessWidget {
       child: BlocBuilder<NaviBloc, NaviState>(
         builder: (context, state) {
           // BlocProvider to provide state to everything downstream in the widget
-          return BlocProvider(
+          return BlocProvider<NavDrawerCubit>(
             create: (context) => NavDrawerCubit(state.pageConfig.uiPage),
             child: NavDrawerList(
               themeCubit: BlocProvider.of<ThemeCubit>(context),
