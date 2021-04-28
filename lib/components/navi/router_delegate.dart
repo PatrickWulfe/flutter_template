@@ -39,10 +39,18 @@ class NaviRouterDelegate extends RouterDelegate
 
   // Helper functions
   List<Page> _buildPages(_) {
-    if (_naviState!.pageConfig.uiPage == Pages.login) {
-      return [MaterialPage(child: LoginPage())];
+    switch (_naviState!.pageConfig.uiPage) {
+      case Pages.home:
+        return [MaterialPage(child: HomePage())];
+      case Pages.login:
+        return [MaterialPage(child: LoginPage())];
+      case Pages.settings:
+        return [MaterialPage(child: SettingsPage())];
+      case Pages.error:
+        return [MaterialPage(child: ErrorPage())];
+      default:
+        return [MaterialPage(child: HomePage())];
     }
-    return [MaterialPage(child: HomePage())];
   }
 
   bool _onPopPage(Route<dynamic> route, result) {
