@@ -44,8 +44,8 @@ class NaviRouterDelegate extends RouterDelegate
         return [MaterialPage(child: HomePage())];
       case Pages.login:
         return [MaterialPage(child: LoginPage())];
-      case Pages.settings:
-        return [MaterialPage(child: SettingsPage())];
+      //case Pages.settings:
+      //return [MaterialPage(child: SettingsPage())];
       case Pages.error:
         return [MaterialPage(child: ErrorPage())];
       default:
