@@ -6,7 +6,7 @@ import '../../../core/core.dart';
 part 'nav_drawer_state.dart';
 
 class NavDrawerCubit extends Cubit<NavDrawerState> {
-  NavDrawerCubit(Pages currentPage) : super(NavDrawerState(currentPage));
+  NavDrawerCubit() : super(NavDrawerState(Pages.home));
 
   void updateSelected(Pages page) {
     emit(NavDrawerState(page));

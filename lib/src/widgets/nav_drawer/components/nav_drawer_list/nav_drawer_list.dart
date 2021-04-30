@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/core.dart';
-import '../../../components.dart';
+import '../../../widgets.dart';
 import '../components.dart';
 
+@immutable
 class NavDrawerList extends StatelessWidget {
-  ThemeCubit themeCubit;
-  DrawerHeader header;
-  NavDrawerList({Key? key, required this.themeCubit, required this.header})
-      : super(key: key);
+  final DrawerHeader header;
+  const NavDrawerList({Key? key, required this.header}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class NavDrawerList extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemCount: Pages.values.length - NumPagesExluded + 2, // +1 for header
       itemBuilder: (context, index) {
-        return _buildItem(_list[index], drawerCubit.state.selectedPage);
+        return _buildItem(_list[index], context);
       },
     );
   }
@@ -39,13 +38,12 @@ class NavDrawerList extends StatelessWidget {
     return _list;
   }
 
-  Widget _buildItem(_ListItem item, Pages selectedPage) {
+  Widget _buildItem(_ListItem item, BuildContext context) {
     switch (item.type) {
       case _ItemTypes.header:
         return _buildHeader();
       case _ItemTypes.page:
-        return _buildPageItem(
-            item.listItem, (selectedPage == (item.listItem.uiPage as Pages)));
+        return _buildPageItem(item.listItem, context);
       case _ItemTypes.settings:
         return _buildSettingsTile();
       default:
@@ -57,7 +55,11 @@ class NavDrawerList extends StatelessWidget {
     return DrawerHeader(child: NavDrawerHeader());
   }
 
-  Widget _buildPageItem(PageConfiguration pageConfig, bool selected) {
+  Widget _buildPageItem(PageConfiguration pageConfig, context) {
+    ThemeCubit themeCubit = BlocProvider.of<ThemeCubit>(context);
+    bool selected =
+        BlocProvider.of<NavDrawerCubit>(context).state.selectedPage ==
+            pageConfig.uiPage;
     Color _selectedColor = themeCubit.state.themeData.selectedRowColor;
     Color _bg = themeCubit.state.themeData.backgroundColor;
     return Card(
