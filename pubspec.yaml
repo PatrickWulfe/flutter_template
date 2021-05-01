@@ -1,29 +1,27 @@
 name: flutter_template
-description: My attempt at a Flutter template combining the new Navigator 2.0 with the BloC state management library 
-
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+description: A new Flutter project.
 version: 1.0.0+1
+publish_to: none
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.12.0-0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_localizations:
+    sdk: flutter
+  bloc: ^7.0.0
   flutter_bloc: ^7.0.0
-  equatable: ^2.0.0
-  bloc_test: ^8.0.0
-  test: ^1.16.5
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  bloc_test: ^8.0.0
+  mocktail: ^0.1.0
+  very_good_analysis: ^2.0.0
 
 flutter:
-  assets: 
-    - assets/
-
   uses-material-design: true
+  generate: true
